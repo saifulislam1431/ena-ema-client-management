@@ -107,7 +107,7 @@ const ManageUsers = () => {
                                     <td className='font-semibold'>
                                         {user?.email}
                                     </td>
-                                    <td className='font-bold px-2 py-1 text-green-500'>{user?.role === "admin" ? "Admin" : "User"}</td>
+                                    <td className='font-bold px-2 py-1 text-green-500'>{user?.role}</td>
                                     <th className='inline-flex gap-3 items-center'>
                                         <button className="myBtn" onClick={() => handleAdmin(user)} disabled={user?.role === "admin" ? true : false}>Make Admin</button>
                                         <button onClick={()=>handleDelete(user)} className="bg-error px-2 py-1 border border-error text-white hover:bg-transparent hover:text-error  rounded transition-all duration-500 "><HiOutlineTrash className='w-7 h-7' /></button>
