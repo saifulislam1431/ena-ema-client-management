@@ -1,0 +1,18 @@
+.spinner{
+    width: 288px;
+    height: 288px;
+    border-top: 8px solid #FF5733;
+    border-left: 8px solid #FF5733;
+    border-radius: 100%;
+    border-style: dashed;
+    animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
