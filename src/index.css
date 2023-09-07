@@ -12,7 +12,7 @@
 @tailwind utilities;
 
 .myBtn{
-  @apply px-4 py-2 border border-primary rounded-md font-bold text-primary text-base hover:text-white hover:bg-primary transition-all duration-500 cursor-pointer
+  @apply px-4 py-2 border border-primary rounded-md font-bold text-primary text-base hover:text-white hover:bg-primary transition-all duration-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer
 }
 
 .navDefault{
