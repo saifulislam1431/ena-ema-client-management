@@ -67,10 +67,10 @@ const SignIn = () => {
             </Helmet>
             <div>
                 <div className='text-center my-10'>
-                <Link to="/" className='inline-flex items-center gap-2'>
-    <img src={logo} alt="Ena Ema Technologies" className='w-10' />
-    <p className='brandFont font-extrabold text-lg text-secondary'>Ena Ema Technologies</p>
-  </Link>
+                    <Link to="/" className='inline-flex items-center gap-2'>
+                        <img src={logo} alt="Ena Ema Technologies" className='w-10' />
+                        <p className='brandFont font-extrabold text-lg text-secondary'>Ena Ema Technologies</p>
+                    </Link>
 
                 </div>
                 <div className='flex gap-14 flex-col lg:flex-row items-center justify-center'>
