@@ -73,7 +73,7 @@ const SignUp = () => {
                     
                     console.log(newData);
                     const loggedUser = res.user;
-                    updateUser(loggedUser, data?.name, data?.photo)
+                    updateUser(loggedUser, data?.name, data.data.display_url)
                         .then(() => {
                             fetch("https://ena-ema-server.vercel.app/users", {
                                 method: "POST",

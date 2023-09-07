@@ -47,10 +47,12 @@ const Navbar = () => {
   const navItems = <>
 
     {
-      user ? <div className="dropdown dropdown-end">
+      user ? <>
+
+      <div className="dropdown dropdown-end mx-5">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <img src={user.photoURL} alt='User'/>
           </div>
         </label>
         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -61,7 +63,9 @@ const Navbar = () => {
           <button onClick={handleOut} className='navDefault inline-flex items-center gap-2'>Logout <IoLogOutOutline className='h-6 w-6' /></button>
 
         </ul>
-      </div> : <Link to="/signIn">
+      </div> 
+     
+      </>: <Link to="/signIn">
       <button className='myBtn inline-flex items-center gap-2'>Sign In <IoLogInOutline className='h-6 w-6' /></button>
       </Link>
     }

@@ -26,3 +26,15 @@
 .inputField {
   @apply w-full lg:w-96 px-6 py-2 rounded-md bg-accent bg-opacity-20 focus:outline focus:outline-accent
 }
+
+.myBtnSec{
+  @apply py-5 px-4 border bg-primary border-primary rounded font-semibold text-white hover:bg-white hover:text-primary transition-all duration-500 cursor-pointer
+}
+
+.dash-active {
+  @apply w-full bg-base-100 font-bold text-primary py-3 px-3 rounded-tl-lg rounded-bl-lg mb-5
+}
+
+.dash-default {
+  @apply font-semibold py-3 px-3 text-neutral mb-5
+}

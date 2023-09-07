@@ -9,8 +9,13 @@ import { Helmet } from 'react-helmet-async';
 import Lottie from "lottie-react";
 import animation from "../../../public/login.json"
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import axios from 'axios';
+
 
 const SignIn = () => {
+    const {logOut} = useAuth()
+    const [axiosSecure] = useAxiosSecure();
 
     const navigation = useNavigation();
     if (navigation.state === "loading") {
@@ -23,21 +28,24 @@ const SignIn = () => {
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/"
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = (data) => {
 
 
+    const onSubmit = async(data) => {
 
 
-        signIn(data?.email, data?.password)
-            .then(res => {
+        const response = await axios.get(`https://ena-ema-server.vercel.app/check/admin/${data?.email}`);
+        if(response.data.admin){
+            signIn(data?.email, data?.password)
+            .then(async (res) => {
                 const loggedUser = res.user;
-                navigate(from, { replace: true })
+                navigate("/dashboard/manageUsers")
                 Swal.fire({
                     title: 'Success!',
                     text: 'Sign In Successful',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 })
+              
             })
             .catch(error => {
                 Swal.fire({
@@ -48,6 +56,16 @@ const SignIn = () => {
                 })
 
             })
+        }else{
+            navigate("/")
+            Swal.fire({
+                title: 'Error!',
+                text: 'Your not an approved admin. Please wait for other admin approval',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+        }
+        
     };
 
 
