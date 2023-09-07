@@ -9,6 +9,7 @@ import ManageClients from '../pages/Admin/ManageClients';
 import Home from '../pages/Home/Home';
 import PrivateRouter from './PrivateRouter';
 import AdminRouter from './AdminRouter';
+import Profile from '../pages/Profile/Profile';
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                         element:<PrivateRouter><AdminRouter><ManageClients /></AdminRouter></PrivateRouter>
                     }
                 ]
+            },
+            {
+                path:"/profile",
+                element:<PrivateRouter><Profile /></PrivateRouter>
             }
         ]
     }
