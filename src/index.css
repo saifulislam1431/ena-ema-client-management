@@ -10,3 +10,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.myBtn{
+  @apply px-4 py-2 border border-primary rounded-md font-bold text-primary text-base hover:text-white hover:bg-primary transition-all duration-500
+}
+
+.navDefault{
+  @apply py-2 px-2 my-2 font-semibold border border-primary rounded text-primary hover:bg-transparent hover:text-primary
+}
+
+.navActive{
+  @apply py-2 px-2 my-2 font-semibold border border-primary rounded bg-primary text-white hover:bg-transparent hover:text-white
+}
