@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import { HiMiniXMark } from 'react-icons/hi2';
 
 const ManageClients = () => {
+    
     const navigation = useNavigation();
     if (navigation.state === "loading") {
         return <Loading></Loading>

@@ -38,7 +38,7 @@ const SignIn = () => {
             signIn(data?.email, data?.password)
             .then(async (res) => {
                 const loggedUser = res.user;
-                navigate("/dashboard/manageUsers")
+                navigate("/dashboard/manageClients")
                 Swal.fire({
                     title: 'Success!',
                     text: 'Sign In Successful',
@@ -121,7 +121,7 @@ const SignIn = () => {
                         </form>
 
                         <div className='mt-5'>
-                            <h1 className='font-medium'>Ena Ema Technologies? <Link className='font-semibold text-secondary underline' to="/signUp">Sign Up</Link></h1>
+                            <h1 className='font-medium'>Want to an admin of Ena Ema Technologies? <Link className='font-semibold text-secondary underline' to="/signUp">Sign Up</Link></h1>
                         </div>
                     </div>
                 </div>

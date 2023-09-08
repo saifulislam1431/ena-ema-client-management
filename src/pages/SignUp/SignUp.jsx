@@ -48,7 +48,7 @@ const SignUp = () => {
         if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
             return setError("At least one special character include in your password")
         }
-        console.log(data);
+        // console.log(data);
 
         fetch(hosting_url, {
             method: "POST",
@@ -56,9 +56,9 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data){
-                console.log(data);
+                // console.log(data);
                 setUrl(data.data.display_url);
                 const newData ={
                     email,
@@ -71,7 +71,7 @@ const SignUp = () => {
                 signUp(email, password)
                 .then(res => {
                     
-                    console.log(newData);
+                    // console.log(newData);
                     const loggedUser = res.user;
                     updateUser(loggedUser, data?.name, data.data.display_url)
                         .then(() => {

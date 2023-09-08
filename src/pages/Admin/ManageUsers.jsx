@@ -1,29 +1,21 @@
 import React from 'react';
 import { useNavigation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
-import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 import SectionTitle from '../../components/SectionTitle';
 import { HiOutlineTrash } from 'react-icons/hi2';
+import useUsers from '../../hooks/useUsers';
+
 
 const ManageUsers = () => {
+    const [users , refetch] = useUsers();
 
     const navigation = useNavigation();
     if (navigation.state === "loading") {
         return <Loading></Loading>
     }
-    const [axiosSecure] = useAxiosSecure();
 
-
-    const { data: users = [], refetch } = useQuery({
-        queryKey: ["users"],
-        queryFn: async () => {
-            const res = await axiosSecure.get("/users")
-            return res.data;
-        }
-    })
 
     const handleAdmin = async (user) => {
 
@@ -91,7 +83,7 @@ const ManageUsers = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map(user => <tr key={user._id}>
+                                users?.map(user => <tr key={user._id}>
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
@@ -122,6 +114,7 @@ const ManageUsers = () => {
                     </table>
                 </div>
             </div>
+            
         </section>
     );
 };
